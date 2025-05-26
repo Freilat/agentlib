@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name            = "agentlib"
+version         = "0.2.0"
+description     = "A simple framework for building LLM-powered agents with tool support."
+readme          = "README.md"
+requires-python = ">=3.8"
+license         = "MIT"
+authors         = [{name = "Jacob Stoner", email = "jacob@jacobsparts.com"}]
+
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Operating System :: OS Independent",
+]
+
+dependencies = [
+  "pydantic>=1.10,<3",
+  "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where   = ["src"]
+include = ["agentlib*"]
+
+[tool.setuptools.package-data]
+agentlib = [
+  "docs/**/*.md",
+  "examples/**/*",
+]
