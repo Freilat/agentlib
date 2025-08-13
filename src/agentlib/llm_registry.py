@@ -102,6 +102,14 @@ register_model("openai","o3",
     timeout=900,
 )
 
+register_model("openai","gpt-5",
+    model="gpt-5",
+    input_cost=1.25,
+    output_cost=10.0,
+    config={"reasoning_effort": "medium", "service_tier": "flex"},
+    timeout=900,
+)
+
 # --- Anthropic ---
 register_provider("anthropic",
     host="api.anthropic.com",
